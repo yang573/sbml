@@ -1,0 +1,40 @@
+fun dec_to_nbit_bin(x,n) =
+{
+    if (n == 0)
+    {
+        output = [];
+    }
+    else
+    {
+        if (x>=n)
+        {
+            output = 1::dec_to_nbit_bin(x -n, n div 2);
+        }
+        else
+        {
+            output = 0::dec_to_nbit_bin(x, n div 2);
+        }
+    }
+} output;
+
+fun bit_val(x) =
+{
+    if (x == 1)
+    {
+        o = 1;
+    }
+    else
+    {
+     o = 2*bit_val(x-1);
+    }
+} o;
+
+fun convert(x,n) =
+{
+    output = dec_to_nbit_bin(x,n);
+} output;
+
+{
+
+    print(convert(128,bit_val(8)));
+}

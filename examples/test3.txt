@@ -1,0 +1,13 @@
+fun Test(a,b)={
+	if (b[0]>7) {
+		output = Test(a*-1,[b[0]-1,b[1]]);
+	} else {
+		output = a::b;
+	}
+} output;
+
+{
+	a = 7;
+	b = [15, 7];
+	print(Test(a,b));
+}
